@@ -10,31 +10,35 @@ interface SearchProps {
  onSubmit: (text: string) => void;
 }
 
+type FormFields = {
+  username: HTMLInputElement
+}
+
 export const Search = ({ hasError, onSubmit }: SearchProps) => {
+
  const searchRef = useRef<HTMLInputElement | null>(null);
 
- const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
-
-    const text = searchRef.current?.value || "";
-
-    if(text) {
-        onSubmit(text);
-        if (searchRef.current) {
-        searchRef.current.value = "";
-        searchRef.current.focus();
-      }
-    }
- };
-
- useEffect(() => {
+  useEffect(() => {
   if (searchRef.current) {
    searchRef.current.focus();
   }
  }, []);
 
+ const handleSubmit = (event: React.FormEvent<HTMLFormElement & FormFields>) => {
+  event.preventDefault();
+
+  const text = event.currentTarget.username.value;
+
+  if (text) {
+   onSubmit(text);
+   event.currentTarget.reset();
+   searchRef.current?.focus();
+ };
+}
+
+
  return (
-  <form onSubmit={handleSubmit} autoComplete="off" >
+  <form onSubmit={handleSubmit} autoComplete="off">
    <div className={styles.search}>
     <label htmlFor="search" className={styles.label}>
      <img src={iconSearch} alt="icon search" />
