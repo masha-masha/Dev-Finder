@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 import { type GithubUser, type GithubError, type LocalGithubUser } from "./types";
-import { Container } from "./components/Container/Container";
-import { TheHeader } from "./components/TheHeader/TheHeader";
-import { Search } from "./components/Search/Search";
-import { UserCard } from "./components/UserCard/UserCard";
+import { Container } from "./components/Container/Container.tsx";
+import { TheHeader } from "./components/TheHeader/TheHeader.tsx";
+import { Search } from "./components/Search/Search.tsx";
+import { UserCard } from "./components/UserCard/UserCard.tsx";
 
 import { defaultUser } from "./mock";
 import { isGithubUser } from "./utils/typeguards";
