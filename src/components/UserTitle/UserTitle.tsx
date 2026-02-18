@@ -1,4 +1,4 @@
-import { LocalGithubUser } from "../../types";
+import { type LocalGithubUser } from "../../types";
 import styles from "./UserTitle.module.scss";
 
 export type UserTitleProps = Pick<

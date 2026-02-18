@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { GithubUser, GithubError, LocalGithubUser } from "./types";
+import { type GithubUser, type GithubError, type LocalGithubUser } from "./types";
 import { Container } from "./components/Container/Container";
 import { TheHeader } from "./components/TheHeader/TheHeader";
 import { Search } from "./components/Search/Search";

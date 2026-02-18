@@ -1,10 +1,10 @@
 import styles from './UserInfo.module.scss';
-import { LocalGithubUser } from "../../types";
+import { type LocalGithubUser } from "../../types";
 import iconBlog from "../../assets/icon-website.svg";
 import iconLocation from "../../assets/icon-location.svg";
 import iconTwitter from "../../assets/icon-twitter.svg";
 import iconCompany from "../../assets/icon-company.svg";
-import { InfoItem, InfoItemProps } from '../InfoItem';
+import { InfoItem, type InfoItemProps } from '../InfoItem';
 
 export type UserInfoProps = Pick<
  LocalGithubUser,

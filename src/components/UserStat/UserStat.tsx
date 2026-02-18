@@ -1,4 +1,4 @@
-import { LocalGithubUser } from "../../types";
+import { type LocalGithubUser } from "../../types";
 import styles from "./UserStat.module.scss";
 
 export type UserStatProps = Pick<LocalGithubUser, "repos" | "followers" | "following">
